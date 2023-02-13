@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Player } from "video-react";
 import { useQuery, gql } from "@apollo/client";
 
@@ -47,22 +47,33 @@ const App = () => {
   } = useQuery(GET_VIDEO);
 
   const [videoLinks, setVideoLinks] = useState<string[]>([]);
+  useEffect(() => {
+    if (videoData && data) {
+      const links: string[] = [];
+      data.lectures.data[0].attributes.video.forEach((name: string) => {
+        const finded = videoData.muxVideoUploaderMuxAssets.data.find(
+          (v: Video) => {
+            return v.attributes.title === name;
+          }
+        );
+
+        const playback_id = finded && finded.attributes.playback_id;
+
+        if (finded) {
+          links.push(`${muxLink}/${playback_id}.m3u8`);
+        } else {
+          links.push("");
+        }
+      });
+
+      console.log(links);
+
+      setVideoLinks(links);
+    }
+  }, [videoData, data]);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error : {error.message}</p>;
-
-  if (videoData && data) {
-    const links: string[] = [];
-    data.lectures.data[0].attributes.video.forEach((name: string) => {
-      const playback_id = videoData.data[0].muxVideoUploaderMuxAssets.data.find(
-        (v: Video) => v.attributes.title === name
-      ).playback_id;
-
-      links.push(`${muxLink}/${playback_id}.m3u8`);
-    });
-
-    setVideoLinks(links);
-  }
 
   return (
     <div className="container">
@@ -120,7 +131,7 @@ const App = () => {
         <div>
           <p>Посмотрите видео.</p>
           {videoLinks.length !== 0 && (
-            <Player playsInline src={`${muxLink}/${videoLinks[0]}`} />
+            <Player playsInline src={`${videoLinks[0]}`} />
           )}
         </div>
         <div>
