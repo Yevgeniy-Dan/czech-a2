@@ -19,7 +19,7 @@ const GET_LECTURES = gql`
 `;
 
 const GET_VIDEO = gql`
-  query {
+  query GetVideo {
     muxVideoUploaderMuxAssets {
       data {
         attributes {
@@ -53,8 +53,8 @@ const App = () => {
 
   if (videoData && data) {
     const links: string[] = [];
-    data.lectures.data[0].attributes.video.map((name: string) => {
-      const playback_id = videoData.muxVideoUploaderMuxAssets.data.find(
+    data.lectures.data[0].attributes.video.forEach((name: string) => {
+      const playback_id = videoData.data[0].muxVideoUploaderMuxAssets.data.find(
         (v: Video) => v.attributes.title === name
       ).playback_id;
 
