@@ -1,25 +1,6 @@
-import { useQuery, gql } from "@apollo/client";
 import "./App.css";
 
-const GET_LECTURES = gql`
-  query GetLecture {
-    lectures(filters: { name: { eq: "lecture_1" } }) {
-      data {
-        id
-        attributes {
-          name
-        }
-      }
-    }
-  }
-`;
-
 const App = () => {
-  // const { loading, error, data } = useQuery(GET_LECTURES);
-
-  // if (loading) return <p>Loading...</p>;
-  // if (error) return <p>Error : {error.message}</p>;
-
   return (
     <div className="container">
       <div>
@@ -125,7 +106,7 @@ const App = () => {
             тетрадь.
           </p>
           <img
-            src="https://czech-a2-strapi.herokuapp.com/uploads/l1_Sloveso_Byt_6e22b8b530.png"
+            src="https://czecha2bucket.s3.amazonaws.com/lekce_1/l1-Sloveso+Byt.png"
             alt="Byt"
             width={450}
             height="auto"
@@ -270,7 +251,12 @@ const App = () => {
                 studentka.
               </i>
             </p>
-            <a href="">Тест 1. Doplňte formu slovesa být</a>
+            <a
+              href="https://7vovmq2cdjr.typeform.com/to/lJ5xHn3v"
+              target="blank"
+            >
+              Тест 1. Doplňte formu slovesa být
+            </a>
           </div>
           <div>
             <p>
@@ -281,7 +267,12 @@ const App = () => {
                 Vzor: To ... stůl. To <strong>je</strong> stůl.
               </i>
             </p>
-            <a href="">Тест 2. Doplňte tvary slovesa být</a>
+            <a
+              href="https://7vovmq2cdjr.typeform.com/to/u5fh1hrZ"
+              target="blank"
+            >
+              Тест 2. Doplňte tvary slovesa být
+            </a>
           </div>
         </div>
 
@@ -290,7 +281,7 @@ const App = () => {
           <figure>
             <audio
               controls
-              src="https://czech-a2-strapi.herokuapp.com/uploads/l1_OPAKOVANI_SLOVESA_BYT_02f3067d96.mp3"
+              src="https://czecha2bucket.s3.amazonaws.com/lekce_1/l1-OPAKOV%C3%81N%C3%8D_SLOVESA_B%C3%9DT.mp3"
             ></audio>
             <figcaption>
               <strong>Диалог B. Šimon a Jana</strong>
@@ -377,7 +368,7 @@ const App = () => {
             </i>
           </p>
           <img
-            src="https://czech-a2-strapi.herokuapp.com/uploads/l1_SLOVESA_MIT_1b777ea84f.png"
+            src="https://czecha2bucket.s3.amazonaws.com/lekce_1/l1-SLOVESA+%C2%ABM%C3%8DT%C2%BB.png"
             alt=""
             width={450}
             height="auto"
@@ -442,7 +433,7 @@ const App = () => {
           <figure>
             <audio
               controls
-              src="https://czech-a2-strapi.herokuapp.com/uploads/l1_OPAKOVANI_SLOVESA_MIT_ab664fed2b.mp3"
+              src="https://czecha2bucket.s3.amazonaws.com/lekce_1/l1-OPAKOV%C3%81N%C3%8D+SLOVESA+%C2%ABM%C3%8DT%C2%BB.mp3"
             ></audio>
             <figcaption>
               <strong>Диалог A. Šimon a Matěj</strong>
@@ -582,7 +573,7 @@ const App = () => {
             </i>
           </p>
           <img
-            src="https://czech-a2-strapi.herokuapp.com/uploads/l1_CASOVANI_SLOVES_ddb0694c02.jpg"
+            src="https://czecha2bucket.s3.amazonaws.com/lekce_1/l1-%C4%8CASOV%C3%81N%C3%8D+SLOVES.jpg"
             alt=""
             width={450}
             height="auto"
@@ -597,7 +588,10 @@ const App = () => {
           <p>
             <i>Вы можете её сохранить и распечатать.</i>
           </p>
-          <a href="https://czech-a2-strapi.herokuapp.com/uploads/l1_Slang_Nepravidelna_Slovesa_c397bbcf16.pdf">
+          <a
+            href="https://czecha2bucket.s3.amazonaws.com/lekce_1/l1-Slang-Nepravideln%C3%A1_Slovesa.pdf"
+            target="blank"
+          >
             Nepravidelná slovesa v českém jazyce
           </a>
         </div>
@@ -617,7 +611,7 @@ const App = () => {
               </strong>
             </p>
             <img
-              src="https://czech-a2-strapi.herokuapp.com/uploads/l1_jednotneho_cisla_1_64fd6ddd68.jpg"
+              src="https://czecha2bucket.s3.amazonaws.com/lekce_1/l1-jednotn%C3%A9ho_%C4%8D%C3%ADsla_1.jpg"
               alt=""
               width={450}
               height="auto"
@@ -665,7 +659,7 @@ const App = () => {
               </strong>
             </p>
             <img
-              src="https://czech-a2-strapi.herokuapp.com/uploads/l1_jednotneho_cisla_2_649bfc8502.jpg"
+              src="https://czecha2bucket.s3.amazonaws.com/lekce_1/l1-jednotn%C3%A9ho_%C4%8D%C3%ADsla_2.jpg"
               alt=""
             />
             <p>Vzor: Měří tlak &#8594; Měříme tlak </p>
@@ -710,7 +704,7 @@ const App = () => {
               </strong>
             </p>
             <img
-              src="https://czech-a2-strapi.herokuapp.com/uploads/l1_cisla_mnozneho_39f35ae778.jpg"
+              src="https://czecha2bucket.s3.amazonaws.com/lekce_1/l1-%C4%8D%C3%ADsla_mno%C5%BEn%C3%A9ho.jpg"
               alt=""
             />
             <p>Vzor: Jít na záchod &#8594; Jdou na záchod</p>
@@ -771,7 +765,7 @@ const App = () => {
           <figure>
             <audio
               controls
-              src="https://czech-a2-strapi.herokuapp.com/uploads/l1_02_07_a93f0520b7.mp3"
+              src="https://czecha2bucket.s3.amazonaws.com/lekce_1/l1-02-07.mp3"
             ></audio>
             <figcaption>
               <strong>Диалог C. Učitelka a Ivana</strong>
@@ -812,7 +806,7 @@ const App = () => {
           <figure>
             <audio
               controls
-              src="https://czech-a2-strapi.herokuapp.com/uploads/l1_03_07_44e2c7b797.mp3"
+              src="https://czecha2bucket.s3.amazonaws.com/lekce_1/l1-03-07.mp3"
             ></audio>
             <figcaption>
               <strong>Диалог C. Návštěva. Ivana a Šimon</strong>
@@ -863,7 +857,9 @@ const App = () => {
             </strong>
           </p>
 
-          <a href="">Тест 3. Doplňte tvary přítomného času</a>
+          <a href="https://7vovmq2cdjr.typeform.com/to/hF2TqPbi" target="blank">
+            Тест 3. Doplňte tvary přítomného času
+          </a>
 
           <p className="gb">Внимание! Задание b) выполняется по желанию.</p>
           <p>
@@ -952,7 +948,12 @@ const App = () => {
             <strong>
               c) -í konjugace: vzor mluvit (infinitiv na -it / -et / -ět)
             </strong>
-            <a href="">Тест 4. Doplňte tvary přítomného času</a>
+            <a
+              href="https://7vovmq2cdjr.typeform.com/to/AUCZZ5d0"
+              target="blank"
+            >
+              Тест 4. Doplňte tvary přítomného času
+            </a>
           </p>
         </div>
         <div>
@@ -1048,7 +1049,9 @@ const App = () => {
               -ct + nepravidelná slovesa)
             </strong>
           </p>
-          <a href="">Тест 5. Doplňte tvary přítomného času</a>
+          <a href="https://7vovmq2cdjr.typeform.com/to/pAwTHKYP" target="blank">
+            Тест 5. Doplňte tvary přítomného času
+          </a>
           <p className="gb">Внимание! Задание f) выполняется по желанию.</p>
         </div>
         <div>
@@ -1124,7 +1127,9 @@ const App = () => {
               g) -ne konjugace: vzor tisknout (infinitiv na -nout, -at, -ít)
             </strong>
           </p>
-          <a href="">Тест 6. Doplňte tvary přítomného času</a>
+          <a href="https://7vovmq2cdjr.typeform.com/to/c2mPehgX">
+            Тест 6. Doplňte tvary přítomného času
+          </a>
         </div>
         <div>
           <p className="gb">
@@ -1202,7 +1207,9 @@ const App = () => {
               (infinitiv na -ovat, -át, -out, -ýt, -ít)
             </strong>
           </p>
-          <a href="">Тест 7. Doplňte tvary přítomného času</a>
+          <a href="https://7vovmq2cdjr.typeform.com/to/wtN9aQbx" target="blank">
+            Тест 7. Doplňte tvary přítomného času
+          </a>
         </div>
         <div>
           <p className="gb">
