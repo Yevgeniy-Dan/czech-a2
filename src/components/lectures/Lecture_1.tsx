@@ -1,12 +1,18 @@
-import "./App.css";
+import React from "react";
+import { Collapse } from "react-bootstrap";
+import useKeyOpen from "../../hooks/useKeyOpen";
 
-const App = () => {
+const Lecture_1: React.FC<React.PropsWithChildren<{}>> = (props) => {
+  const e = useKeyOpen(10);
+
   return (
-    <div className="container">
+    <div>
+      <a href="">Эффективный курс чешского A2+</a>
+
       <div>
         <h1 className="text-center">1. lekce</h1>
         <p> Opakování sloves «být», «mít» a časování sloves </p>
-        <a href="next">Следующий урок</a>
+        <a href={`2`}>Следующий урок</a>
       </div>
       <div>
         <h1>Добрый день, дорогие друзья!</h1>
@@ -489,48 +495,50 @@ const App = () => {
         </div>
 
         <div>
-          <p>Klíče</p>
+          <button onClick={() => e.toggleKey(1)}>Klíče</button>
           {/* Это должно быть спрятано изначально, кликаиешь по клише и раскрывается */}
-          <section>
-            <div>
-              <p>
-                <strong>1. Ответьте на вопросы:</strong>
-              </p>
-              <p>a) Nerudova ulice (2 / číslo 2)</p>
-              <p>b) Víno</p>
-              <p>c) Červený (malý, hezký) dárek</p>
-            </div>
-            <div>
-              <p>
-                <strong>2. Найдите все формы глагола "mít".</strong>
-              </p>
-              <p>Hele, máš nějaký dárek?Mám víno.</p>
-              <p>Hm, tak já víno nemám.</p>
-              <p>Matěji, a ty máš nějaký dárek?</p>
-              <p>Já mám moc dobrý dárek.</p>
-              <p>Máš dort!</p>
-              <p>Tak co máš?</p>
-              <p>Já mám hezký dárek.</p>
-              <p>Mám moc hezký dárek.</p>
-            </div>
-            <div>
-              <p>
-                <strong>
-                  3. Поработайте с найденными формами глагола "mít". Покажите
-                  его форму.
-                </strong>
-              </p>
-              <p>máš (ty)</p>
-              <p>mám (já)</p>
-              <p>nemám (já)</p>
-              <p>máš (ty)</p>
-              <p>mám (já)</p>
-              <p>máš (ty)</p>
-              <p>máš (ty)</p>
-              <p>mám (já)</p>
-              <p>mám (já)</p>
-            </div>
-          </section>
+          <Collapse in={e.getValue(1)} timeout={2000}>
+            <section>
+              <div>
+                <p>
+                  <strong>1. Ответьте на вопросы:</strong>
+                </p>
+                <p>a) Nerudova ulice (2 / číslo 2)</p>
+                <p>b) Víno</p>
+                <p>c) Červený (malý, hezký) dárek</p>
+              </div>
+              <div>
+                <p>
+                  <strong>2. Найдите все формы глагола "mít".</strong>
+                </p>
+                <p>Hele, máš nějaký dárek?Mám víno.</p>
+                <p>Hm, tak já víno nemám.</p>
+                <p>Matěji, a ty máš nějaký dárek?</p>
+                <p>Já mám moc dobrý dárek.</p>
+                <p>Máš dort!</p>
+                <p>Tak co máš?</p>
+                <p>Já mám hezký dárek.</p>
+                <p>Mám moc hezký dárek.</p>
+              </div>
+              <div>
+                <p>
+                  <strong>
+                    3. Поработайте с найденными формами глагола "mít". Покажите
+                    его форму.
+                  </strong>
+                </p>
+                <p>máš (ty)</p>
+                <p>mám (já)</p>
+                <p>nemám (já)</p>
+                <p>máš (ty)</p>
+                <p>mám (já)</p>
+                <p>máš (ty)</p>
+                <p>máš (ty)</p>
+                <p>mám (já)</p>
+                <p>mám (já)</p>
+              </div>
+            </section>
+          </Collapse>
         </div>
       </div>
 
@@ -626,28 +634,32 @@ const App = () => {
               <li>Klečí &#8594;</li>
               <li>Hladí &#8594;</li>
             </ul>
-            <p>Klíče</p>
-            <p>
-              Běží &#8594; <strong>Běžet</strong>
-            </p>
-            <p>
-              Cvičí &#8594; <strong>Cvičit</strong>
-            </p>
-            <p>
-              Letí &#8594; <strong>Letět</strong>
-            </p>
-            <p>
-              Leze &#8594; <strong>Lézt</strong>
-            </p>
-            <p>
-              Leží &#8594; <strong>Ležet</strong>
-            </p>
-            <p>
-              Klečí &#8594; <strong>Klečet</strong>
-            </p>
-            <p>
-              Hladí &#8594; <strong>Hladit</strong>
-            </p>
+            <button onClick={() => e.toggleKey(2)}>Klíče</button>
+            <Collapse in={e.getValue(2)} timeout={2000}>
+              <div>
+                <p>
+                  Běží &#8594; <strong>Běžet</strong>
+                </p>
+                <p>
+                  Cvičí &#8594; <strong>Cvičit</strong>
+                </p>
+                <p>
+                  Letí &#8594; <strong>Letět</strong>
+                </p>
+                <p>
+                  Leze &#8594; <strong>Lézt</strong>
+                </p>
+                <p>
+                  Leží &#8594; <strong>Ležet</strong>
+                </p>
+                <p>
+                  Klečí &#8594; <strong>Klečet</strong>
+                </p>
+                <p>
+                  Hladí &#8594; <strong>Hladit</strong>
+                </p>
+              </div>
+            </Collapse>
           </div>
 
           <div>
@@ -672,28 +684,32 @@ const App = () => {
               <li>Vyvenčuje &#8594;</li>
               <li>Pere se &#8594;</li>
             </ul>
-            <p>Klíče </p>
-            <p>
-              Píchá &#8594; <strong>Pícháme</strong>
-            </p>
-            <p>
-              Rehabilituje &#8594; <strong>Rehabilitujeme</strong>
-            </p>
-            <p>
-              Maže &#8594; <strong>Mažeme</strong>
-            </p>
-            <p>
-              Kouří &#8594; <strong>Kouříme</strong>
-            </p>
-            <p>
-              Skáče &#8594; <strong>Skáčeme</strong>
-            </p>
-            <p>
-              Vyvenčuje &#8594; <strong>Vyvenčujeme</strong>
-            </p>
-            <p>
-              Pere se &#8594; <strong>Pereme se</strong>
-            </p>
+            <button onClick={() => e.toggleKey(3)}>Klíče</button>
+            <Collapse in={e.getValue(3)} timeout={2000}>
+              <div>
+                <p>
+                  Píchá &#8594; <strong>Pícháme</strong>
+                </p>
+                <p>
+                  Rehabilituje &#8594; <strong>Rehabilitujeme</strong>
+                </p>
+                <p>
+                  Maže &#8594; <strong>Mažeme</strong>
+                </p>
+                <p>
+                  Kouří &#8594; <strong>Kouříme</strong>
+                </p>
+                <p>
+                  Skáče &#8594; <strong>Skáčeme</strong>
+                </p>
+                <p>
+                  Vyvenčuje &#8594; <strong>Vyvenčujeme</strong>
+                </p>
+                <p>
+                  Pere se &#8594; <strong>Pereme se</strong>
+                </p>
+              </div>
+            </Collapse>
           </div>
 
           <div>
@@ -720,40 +736,44 @@ const App = () => {
               <li>Bublat &#8594;</li>
               <li>Skákat na míči &#8594;</li>
             </ul>
-            <p>Klíče </p>
-            <p>
-              Zamknout &#8594; <strong>Zamknou</strong>
-            </p>
-            <p>
-              Zamknout auto &#8594; <strong>Zamknou auto</strong>
-            </p>
-            <p>
-              Škrábat &#8594; <strong>Škrábou</strong>
-            </p>
-            <p>
-              Vytáhnout plevel &#8594; <strong>Vytáhnou</strong>
-            </p>
-            <p>
-              Vymačkat &#8594; <strong>Vymačkají</strong>
-            </p>
-            <p>
-              Vážit &#8594; <strong>Váží</strong>
-            </p>
-            <p>
-              Péci &#8594; <strong>Pečou</strong>
-            </p>
-            <p>
-              Koupat se &#8594; <strong>Koupou se</strong>
-            </p>
-            <p>
-              Předklonit se &#8594; <strong>Předkloní se</strong>
-            </p>
-            <p>
-              Bublat &#8594; <strong>Bublají</strong>
-            </p>
-            <p>
-              Skákat na míči &#8594; <strong>Skáčou na míči</strong>
-            </p>
+            <button onClick={() => e.toggleKey(4)}>Klíče</button>
+            <Collapse in={e.getValue(4)} timeout={2000}>
+              <div>
+                <p>
+                  Zamknout &#8594; <strong>Zamknou</strong>
+                </p>
+                <p>
+                  Zamknout auto &#8594; <strong>Zamknou auto</strong>
+                </p>
+                <p>
+                  Škrábat &#8594; <strong>Škrábou</strong>
+                </p>
+                <p>
+                  Vytáhnout plevel &#8594; <strong>Vytáhnou</strong>
+                </p>
+                <p>
+                  Vymačkat &#8594; <strong>Vymačkají</strong>
+                </p>
+                <p>
+                  Vážit &#8594; <strong>Váží</strong>
+                </p>
+                <p>
+                  Péci &#8594; <strong>Pečou</strong>
+                </p>
+                <p>
+                  Koupat se &#8594; <strong>Koupou se</strong>
+                </p>
+                <p>
+                  Předklonit se &#8594; <strong>Předkloní se</strong>
+                </p>
+                <p>
+                  Bublat &#8594; <strong>Bublají</strong>
+                </p>
+                <p>
+                  Skákat na míči &#8594; <strong>Skáčou na míči</strong>
+                </p>
+              </div>
+            </Collapse>
           </div>
         </div>
         <div>
@@ -791,13 +811,15 @@ const App = () => {
               uslyšeli v dialogu.
             </strong>
           </p>
-          <p>Klíče</p>
-          <p>
-            <i>
-              Není, sportuje, studujeme, sportuje, rád studuje, je, nerozumím,
-              je, není, není, je, lyžuje, není, je, nesportujeme, studujeme.
-            </i>
-          </p>
+          <button onClick={() => e.toggleKey(5)}>Klíče</button>
+          <Collapse in={e.getValue(5)} timeout={2000}>
+            <p>
+              <i>
+                Není, sportuje, studujeme, sportuje, rád studuje, je, nerozumím,
+                je, není, není, je, lyžuje, není, je, nesportujeme, studujeme.
+              </i>
+            </p>
+          </Collapse>
         </div>
         <div>
           <p>
@@ -911,37 +933,41 @@ const App = () => {
               <td>Jak často ... pokojové květiny?</td>
             </tr>
           </table>
-          <p>Klíče</p>
-          <p>
-            <strong>Vítám</strong> tě u nás v Praze.
-          </p>
-          <p>
-            <strong>Nechají</strong> nám tady staré učebnice.
-          </p>
-          <p>
-            <strong>Prodáváte</strong> už zájezdy na letní sezonu?
-          </p>
-          <p>
-            <strong>Nazýváme</strong> vše pravým jménem.
-          </p>
-          <p>
-            Eva brzo <strong>získá</strong> diplom magistra ekonomie.
-          </p>
-          <p>
-            Po celý rok <strong>užívají</strong> náš byt.
-          </p>
-          <p>
-            Co stále <strong>hledáš?</strong>
-          </p>
-          <p>
-            <strong>Žádáme</strong> o prodloužení našeho pobytu.
-          </p>
-          <p>
-            <strong>Doufají,</strong> že opět příští léto přijedou.
-          </p>
-          <p>
-            Jak často <strong>zaléváš</strong> pokojové květiny?
-          </p>
+          <button onClick={() => e.toggleKey(6)}>Klíče</button>
+          <Collapse in={e.getValue(6)} timeout={2000}>
+            <div>
+              <p>
+                <strong>Vítám</strong> tě u nás v Praze.
+              </p>
+              <p>
+                <strong>Nechají</strong> nám tady staré učebnice.
+              </p>
+              <p>
+                <strong>Prodáváte</strong> už zájezdy na letní sezonu?
+              </p>
+              <p>
+                <strong>Nazýváme</strong> vše pravým jménem.
+              </p>
+              <p>
+                Eva brzo <strong>získá</strong> diplom magistra ekonomie.
+              </p>
+              <p>
+                Po celý rok <strong>užívají</strong> náš byt.
+              </p>
+              <p>
+                Co stále <strong>hledáš?</strong>
+              </p>
+              <p>
+                <strong>Žádáme</strong> o prodloužení našeho pobytu.
+              </p>
+              <p>
+                <strong>Doufají,</strong> že opět příští léto přijedou.
+              </p>
+              <p>
+                Jak často <strong>zaléváš</strong> pokojové květiny?
+              </p>
+            </div>
+          </Collapse>
         </div>
         <div>
           <p>
@@ -1009,38 +1035,42 @@ const App = () => {
               <td>Studenti a studentky rádi ... smažený sýr.</td>
             </tr>
           </table>
-          <p>Klíče</p>
-          <p>
-            Proč <strong>odcházíte</strong> tak brzo?
-          </p>
-          <p>
-            Petr <strong>se</strong> nervózně <strong>otáčí</strong> po
-            kolemjdoucích.
-          </p>
-          <p>
-            Nerada <strong>čistím</strong> zimní boty.
-          </p>
-          <p>
-            Stále <strong>přicházejí</strong> další studenti a studentky.
-          </p>
-          <p>
-            Rodiče často <strong>vyprávějí</strong> o svém dětství.
-          </p>
-          <p>
-            Dnes <strong>chybí</strong> polovina posluchačů a posluchaček.
-          </p>
-          <p>
-            Myslím si, že mě ne <strong>chytíš.</strong>{" "}
-          </p>
-          <p>
-            Je nemocná, <strong>leží</strong> v posteli.
-          </p>
-          <p>
-            Martin se rád <strong>vrací</strong> do rodného města.
-          </p>
-          <p>
-            Studenti a studentky rádi <strong>jedí</strong> smažený sýr.
-          </p>
+          <button onClick={() => e.toggleKey(7)}>Klíče</button>
+          <Collapse in={e.getValue(7)} timeout={2000}>
+            <div>
+              <p>
+                Proč <strong>odcházíte</strong> tak brzo?
+              </p>
+              <p>
+                Petr <strong>se</strong> nervózně <strong>otáčí</strong> po
+                kolemjdoucích.
+              </p>
+              <p>
+                Nerada <strong>čistím</strong> zimní boty.
+              </p>
+              <p>
+                Stále <strong>přicházejí</strong> další studenti a studentky.
+              </p>
+              <p>
+                Rodiče často <strong>vyprávějí</strong> o svém dětství.
+              </p>
+              <p>
+                Dnes <strong>chybí</strong> polovina posluchačů a posluchaček.
+              </p>
+              <p>
+                Myslím si, že mě ne <strong>chytíš.</strong>{" "}
+              </p>
+              <p>
+                Je nemocná, <strong>leží</strong> v posteli.
+              </p>
+              <p>
+                Martin se rád <strong>vrací</strong> do rodného města.
+              </p>
+              <p>
+                Studenti a studentky rádi <strong>jedí</strong> smažený sýr.
+              </p>
+            </div>
+          </Collapse>
         </div>
         <div>
           <p>
@@ -1095,31 +1125,35 @@ const App = () => {
               <td>Evička upadla a ....</td>
             </tr>
           </table>
-          <p>Klíče</p>
-          <p>
-            Naše zahrada na jaře krásně <strong>kvete.</strong>
-          </p>
-          <p>
-            Rádi <strong>plavou</strong> v moři.
-          </p>
-          <p>
-            Včas vám <strong>ukážeme</strong> svůj návrh.
-          </p>
-          <p>
-            Prádlo <strong>peru</strong> v pračce, ale svetry v ruce.
-          </p>
-          <p>
-            Jitka <strong>maže</strong> chlebíčky pomazánkou.
-          </p>
-          <p>
-            Děti jsou neopatrné a všude <strong>lezou.</strong>
-          </p>
-          <p>
-            <strong>Otevřu</strong> na chvíli okno, je tu moc teplo.
-          </p>
-          <p>
-            Evička upadla a <strong>pláče.</strong>
-          </p>
+          <button onClick={() => e.toggleKey(8)}>Klíče</button>
+          <Collapse in={e.getValue(8)} timeout={2000}>
+            <div>
+              <p>
+                Naše zahrada na jaře krásně <strong>kvete.</strong>
+              </p>
+              <p>
+                Rádi <strong>plavou</strong> v moři.
+              </p>
+              <p>
+                Včas vám <strong>ukážeme</strong> svůj návrh.
+              </p>
+              <p>
+                Prádlo <strong>peru</strong> v pračce, ale svetry v ruce.
+              </p>
+              <p>
+                Jitka <strong>maže</strong> chlebíčky pomazánkou.
+              </p>
+              <p>
+                Děti jsou neopatrné a všude <strong>lezou.</strong>
+              </p>
+              <p>
+                <strong>Otevřu</strong> na chvíli okno, je tu moc teplo.
+              </p>
+              <p>
+                Evička upadla a <strong>pláče.</strong>
+              </p>
+            </div>
+          </Collapse>
         </div>
         <div>
           <p>
@@ -1174,31 +1208,35 @@ const App = () => {
               <td>..., až tady budou všichni.</td>
             </tr>
           </table>
-          <p>Klíče</p>
-          <p>
-            Kdo <strong>vládne</strong> ve Velké Británii?{" "}
-          </p>
-          <p>
-            <strong>Vzpomeneme si</strong> na příhodu z dovolené.
-          </p>
-          <p>
-            <strong>Zůstanou</strong> na chatě ještě týden.
-          </p>
-          <p>
-            Za pět let <strong>se stane</strong> právníkem.
-          </p>
-          <p>
-            Až <strong>si odpočinete,</strong> půjdeme se projít.
-          </p>
-          <p>
-            Co mi k tomu <strong>řekneš?</strong>
-          </p>
-          <p>
-            Jak se <strong>dostanu</strong> na nádraží?
-          </p>
-          <p>
-            <strong>Začneme</strong> , až tady budou všichni.
-          </p>
+          <button onClick={() => e.toggleKey(9)}>Klíče</button>
+          <Collapse in={e.getValue(9)} timeout={2000}>
+            <div>
+              <p>
+                Kdo <strong>vládne</strong> ve Velké Británii?{" "}
+              </p>
+              <p>
+                <strong>Vzpomeneme si</strong> na příhodu z dovolené.
+              </p>
+              <p>
+                <strong>Zůstanou</strong> na chatě ještě týden.
+              </p>
+              <p>
+                Za pět let <strong>se stane</strong> právníkem.
+              </p>
+              <p>
+                Až <strong>si odpočinete,</strong> půjdeme se projít.
+              </p>
+              <p>
+                Co mi k tomu <strong>řekneš?</strong>
+              </p>
+              <p>
+                Jak se <strong>dostanu</strong> na nádraží?
+              </p>
+              <p>
+                <strong>Začneme</strong> , až tady budou všichni.
+              </p>
+            </div>
+          </Collapse>
         </div>
         <div>
           <p>
@@ -1257,29 +1295,33 @@ const App = () => {
               <td>Ty kalhoty si ... podle nového střihu.</td>
             </tr>
           </table>
-          <p>Klíče</p>
-          <p>
-            <strong>Zuju</strong> se hned v předsíni.
-          </p>
-          <p>
-            Bratr <strong>myje</strong> podlahu každou sobotu.
-          </p>
-          <p>
-            Nové rukavice a nová čepice mě <strong>hřejí.</strong>
-          </p>
-          <p>Rád piju černé pivo.</p>
-          <p>
-            Je pravda, že <strong>žijete</strong> na venkově?
-          </p>
-          <p>
-            <strong>Hrajeme</strong> tenis každou sobotu.
-          </p>
-          <p>
-            <strong>Obuješ se</strong> sám, nebo ti mám pomoct?
-          </p>
-          <p>
-            Ty kalhoty si <strong>šiju</strong> podle nového střihu.
-          </p>
+          <button onClick={() => e.toggleKey(10)}>Klíče</button>
+          <Collapse in={e.getValue(10)} timeout={2000}>
+            <div>
+              <p>
+                <strong>Zuju</strong> se hned v předsíni.
+              </p>
+              <p>
+                Bratr <strong>myje</strong> podlahu každou sobotu.
+              </p>
+              <p>
+                Nové rukavice a nová čepice mě <strong>hřejí.</strong>
+              </p>
+              <p>Rád piju černé pivo.</p>
+              <p>
+                Je pravda, že <strong>žijete</strong> na venkově?
+              </p>
+              <p>
+                <strong>Hrajeme</strong> tenis každou sobotu.
+              </p>
+              <p>
+                <strong>Obuješ se</strong> sám, nebo ti mám pomoct?
+              </p>
+              <p>
+                Ty kalhoty si <strong>šiju</strong> podle nového střihu.
+              </p>
+            </div>
+          </Collapse>
         </div>
       </div>
       <div>
@@ -1289,4 +1331,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Lecture_1;
