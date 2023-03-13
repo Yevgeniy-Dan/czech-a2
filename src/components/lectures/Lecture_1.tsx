@@ -1,5 +1,6 @@
 import React from "react";
 import { Collapse } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import useKeyOpen from "../../hooks/useKeyOpen";
 
 const Lecture_1: React.FC<React.PropsWithChildren<{}>> = (props) => {
@@ -7,7 +8,7 @@ const Lecture_1: React.FC<React.PropsWithChildren<{}>> = (props) => {
 
   return (
     <div>
-      <a href="">Эффективный курс чешского A2+</a>
+      <Link to="../lectures">Эффективный курс чешского A2+</Link>
 
       <div>
         <h1 className="text-center">1. lekce</h1>

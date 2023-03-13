@@ -1,12 +1,14 @@
 import React from "react";
 import { Collapse } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import useKeyOpen from "../../hooks/useKeyOpen";
 
 const Lecture_3: React.FC<React.PropsWithChildren<{}>> = (props) => {
   const keys = useKeyOpen(8);
   return (
     <div>
-      <a href="">Эффективный курс чешского A2+</a>
+      <Link to="../lectures">Эффективный курс чешского A2+</Link>
+
       <div>
         <h1 className="text-center">3. lekce</h1>
         <p> Perfektivní a imperfektivní slovesa </p>
