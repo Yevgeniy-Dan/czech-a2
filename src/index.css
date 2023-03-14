@@ -24,3 +24,11 @@ code {
 .text-cursive {
   font-style: italic;
 }
+
+ul.nested li {
+  font-weight: 600;
+}
+
+ul.nested li ul li {
+  font-weight: normal;
+}
