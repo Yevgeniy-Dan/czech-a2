@@ -1,9 +1,10 @@
 const express = require("express");
 
-// const adminController = require("");
+const adminController = require("../controllers/admin");
 
 const router = express.Router();
+const { protect } = require("../middleware/auth");
 
-// router.get("/tests", )
+router.get("/test/:testId", protect, adminController.getTest);
 
 module.exports = router;

@@ -16,7 +16,7 @@ app.use(cors());
 const adminRoutes = require("./routes/admin");
 const userRoutes = require("./routes/user");
 
-// app.use("/admin", adminRoutes);
+app.use("/api/admin", adminRoutes);
 app.use("/api/users", userRoutes);
 
 if (process.env.NODE_ENV === "production") {
