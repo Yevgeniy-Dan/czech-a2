@@ -15,8 +15,8 @@ const Lecture_5: React.FC<React.PropsWithChildren<{}>> = (props) => {
           Číslo množné rodu mužského neživotného, rodu ženského a rodu středního
           (Nominativ a Akuzativ)
         </p>
-        <a href={`4`}>Предыдущий урок</a>
-        <a href={`6`}>Следующий урок</a>
+        <Link to="/admin/lectures/4">Предыдущий урок</Link>
+        <Link to="/admin/lectures/6">Следующий урок</Link>
       </div>
       <div>
         <h2>Добрый день, дорогие друзья!</h2>

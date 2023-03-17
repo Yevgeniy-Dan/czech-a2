@@ -5,11 +5,13 @@ const Instructions: React.FC<React.PropsWithChildren<{}>> = (props) => {
   return (
     <div>
       <div>
-        <a href={"/"}>Ваш эффективный курс чешского языка Slang. 2023</a>
+        <Link to={"/admin"}>
+          Ваш эффективный курс чешского языка Slang. 2023
+        </Link>
       </div>
       <div>
         <h1>!!ИНСТРУКЦИЯ К УРОКАМ!!</h1>
-        <a href=""> Следующий урок </a>
+        <Link to=""> Следующий урок </Link>
       </div>
 
       <div>
@@ -118,7 +120,7 @@ const Instructions: React.FC<React.PropsWithChildren<{}>> = (props) => {
 
             <p>Установить приложение GetCourse на свой смартфон.</p>
 
-            <a href="">Как установить приложение</a>
+            <Link to="">Как установить приложение</Link>
           </div>
         </section>
       </div>

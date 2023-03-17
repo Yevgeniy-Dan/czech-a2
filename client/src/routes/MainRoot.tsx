@@ -14,7 +14,7 @@ const Root: React.FC<React.PropsWithChildren<{}>> = (props) => {
           /> */}
           <p>Hvězda češtiny</p>
         </div>
-        <a href={`/instructions`}>!!Инструкция к урокам!!</a>
+        <Link to={`/admin/instructions`}>!!Инструкция к урокам!!</Link>
       </div>
 
       <Link

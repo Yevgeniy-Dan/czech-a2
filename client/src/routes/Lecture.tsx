@@ -5,7 +5,7 @@ const Lecture: React.FC<React.PropsWithChildren<{}>> = (props) => {
   const { lectureId } = useParams();
 
   const CurrentLecture = lazy(
-    () => import(`../components/lectures/Lecture_${lectureId}`)
+    () => import(`../components/Lectures/Lecture_${lectureId}`)
   );
 
   return (

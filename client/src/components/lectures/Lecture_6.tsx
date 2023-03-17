@@ -12,8 +12,8 @@ const Lecture_6: React.FC<React.PropsWithChildren<{}>> = (props) => {
       <div>
         <h1 className="text-center">6. lekce</h1>
         <p>Bydlení</p>
-        <a href={`5`}>Предыдущий урок</a>
-        <a href={`7`}>Следующий урок</a>
+        <Link to="/admin/lectures/5">Предыдущий урок</Link>
+        <Link to="/admin/lectures/7">Следующий урок</Link>
       </div>
 
       <div>

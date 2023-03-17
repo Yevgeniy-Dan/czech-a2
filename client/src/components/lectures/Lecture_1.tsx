@@ -8,12 +8,12 @@ const Lecture_1: React.FC<React.PropsWithChildren<{}>> = (props) => {
 
   return (
     <div>
-      <Link to="../lectures">Эффективный курс чешского A2+</Link>
+      <Link to="/admin/lectures">Эффективный курс чешского A2+</Link>
 
       <div>
         <h1 className="text-center">1. lekce</h1>
         <p> Opakování sloves «být», «mít» a časování sloves </p>
-        <a href={`2`}>Следующий урок</a>
+        <Link to="/admin/lectures/2">Следующий урок</Link>
       </div>
       <div>
         <h1>Добрый день, дорогие друзья!</h1>

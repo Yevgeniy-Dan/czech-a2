@@ -7,7 +7,7 @@
     "start": "node server/app.js",
     "server": "nodemon -r dotenv/config server/app.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm tun server\" \"npm run client\"",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
     "build": "cd client && npm install && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

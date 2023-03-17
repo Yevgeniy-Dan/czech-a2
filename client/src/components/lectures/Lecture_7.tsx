@@ -12,8 +12,8 @@ const Lecture_7: React.FC<React.PropsWithChildren<{}>> = (props) => {
       <div>
         <h1 className="text-center">7. lekce</h1>
         <p> Stupňování přídavných jmen a příslovcí </p>
-        <a href={`6`}>Предыдущий урок</a>
-        <a href={`8`}>Следующий урок</a>
+        <Link to="/admin/lectures/6">Предыдущий урок</Link>
+        {/* <Link to="/admin/lectures/8">Следующий урок</Link> */}
       </div>
       <div>
         <h2>Добрый день, дорогие друзья!</h2>

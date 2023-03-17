@@ -12,8 +12,8 @@ const Lecture_2: React.FC<React.PropsWithChildren<{}>> = (props) => {
       <div>
         <h1 className="text-center">2. lekce</h1>
         <p> Minulý čas, se / si, ses / sis a modální slovesa </p>
-        <a href={`1`}>Предыдущий урок</a>
-        <a href={`3`}>Следующий урок</a>
+        <Link to="/admin/lectures/1">Предыдущий урок</Link>
+        <Link to="/admin/lectures/3">Следующий урок</Link>
       </div>
       <div>
         <h1>Добрый день, дорогие друзья!</h1>

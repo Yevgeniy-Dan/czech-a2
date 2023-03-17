@@ -16,8 +16,8 @@ const Lecture_4: React.FC<React.PropsWithChildren<{}>> = (props) => {
           Opakování akuzativu (4. pád), slovesné vazby, osobní zájmena v
           akuzativu{" "}
         </p>
-        <a href={`3`}>Предыдущий урок</a>
-        <a href={`5`}>Следующий урок</a>
+        <Link to="/admin/lectures/3">Предыдущий урок</Link>
+        <Link to="/admin/lectures/5">Следующий урок</Link>
       </div>
 
       <div>

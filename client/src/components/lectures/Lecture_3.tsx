@@ -12,8 +12,8 @@ const Lecture_3: React.FC<React.PropsWithChildren<{}>> = (props) => {
       <div>
         <h1 className="text-center">3. lekce</h1>
         <p> Perfektivní a imperfektivní slovesa </p>
-        <a href={`2`}>Предыдущий урок</a>
-        <a href={`4`}>Следующий урок</a>
+        <Link to="/admin/lectures/2">Предыдущий урок</Link>
+        <Link to="/admin/lectures/4">Следующий урок</Link>
       </div>
       <div>
         <h1>Добрый день, дорогие друзья!</h1>
