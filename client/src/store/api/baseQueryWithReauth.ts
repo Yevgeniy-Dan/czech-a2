@@ -11,7 +11,7 @@ import { setCredentials } from "../auth/authSlice";
 
 const mutex = new Mutex();
 const baseQuery = fetchBaseQuery({
-  baseUrl: "http://localhost:8080/api",
+  baseUrl: process.env.REACT_APP_API_BASE_URL,
   prepareHeaders(headers, { getState }) {
     const token = (getState() as RootState).auth.token;
     if (token) {
