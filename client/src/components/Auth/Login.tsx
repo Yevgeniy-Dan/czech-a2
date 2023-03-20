@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAppDispatch } from "../../hooks/redux";
-import apiSlice from "../../store/api/apiSlice";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux";
+import apiSlice, { useLoginMutation } from "../../store/api/auth";
+import { setCredentials } from "../../store/auth/authSlice";
 
 const Login: React.FC<React.PropsWithChildren<{}>> = (props) => {
   const dispatch = useAppDispatch();
@@ -10,15 +11,26 @@ const Login: React.FC<React.PropsWithChildren<{}>> = (props) => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
+  const [login, { isLoading }] = useLoginMutation();
+
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const userData = {
-      email,
-      password,
-    };
-    await dispatch(apiSlice.endpoints.login.initiate(userData));
-    navigate("/admin");
+    try {
+      const result: any = await login({ email, password });
+      if (result.data) {
+        localStorage.setItem("token", result.data.accessToken);
+        dispatch(
+          setCredentials({
+            user: result.data,
+            token: result.data.accessToken,
+          })
+        );
+        navigate("/admin");
+      }
+    } catch (error) {
+      console.log("Login fails: ", error);
+    }
   };
 
   return (

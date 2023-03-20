@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../hooks/redux";
-import apiSlice from "../../store/api/apiSlice";
+import { useRegisterMutation } from "../../store/api/auth";
+import { setCredentials } from "../../store/auth/authSlice";
 
 const Register: React.FC<React.PropsWithChildren<{}>> = (props) => {
   const dispatch = useAppDispatch();
@@ -10,15 +11,28 @@ const Register: React.FC<React.PropsWithChildren<{}>> = (props) => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
+  const [register, { isLoading }] = useRegisterMutation();
+
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const userData = {
-      email,
-      password,
-    };
-    await dispatch(apiSlice.endpoints.register.initiate(userData));
-    navigate("/admin");
+    try {
+      const result: any = await register({ email, password });
+      if (result.data) {
+        localStorage.setItem("token", result.data.accessToken);
+        dispatch(
+          setCredentials({
+            user: result.data,
+            token: result.data.accessToken,
+          })
+        );
+        navigate("/admin");
+      } else {
+        console.log(result);
+      }
+    } catch (error) {
+      console.log("Register fails: ", error);
+    }
   };
 
   return (

@@ -1,17 +1,28 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
-import apiSlice from "../../store/api/apiSlice";
+import { useLogoutMutation } from "../../store/api/auth";
+import { resetCredentials } from "../../store/auth/authSlice";
 
 const MenuBar: React.FC<React.PropsWithChildren<{}>> = (props) => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
+  const [logout, { isLoading }] = useLogoutMutation();
+
   const isAuth = useAppSelector((state) => state.auth.isAuth);
 
   const onLogout = async () => {
-    await dispatch(apiSlice.endpoints.logout.initiate(null));
-    navigate("/");
+    try {
+      const result: any = await logout(null);
+      if (result.data) {
+        localStorage.removeItem("token");
+        dispatch(resetCredentials());
+        navigate("/");
+      }
+    } catch (error) {
+      console.log("Logout error: ", error);
+    }
   };
 
   return (
@@ -22,8 +33,13 @@ const MenuBar: React.FC<React.PropsWithChildren<{}>> = (props) => {
             <button onClick={onLogout}>Logout</button>
           </div>
         ) : (
-          <div className="p-2">
-            <Link to="/login">Login</Link>
+          <div>
+            <div className="p-2">
+              <Link to="/login">Login</Link>
+            </div>
+            <div className="p-2">
+              <Link to="/register">Register</Link>
+            </div>
           </div>
         )}
       </nav>

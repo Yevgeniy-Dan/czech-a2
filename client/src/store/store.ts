@@ -4,7 +4,7 @@ import {
   Store,
   ThunkDispatch,
 } from "@reduxjs/toolkit";
-import { apiSlice } from "./api/apiSlice";
+import { apiSlice } from "./api/auth";
 import authSlice from "./auth/authSlice";
 
 const store = configureStore({

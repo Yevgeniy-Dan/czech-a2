@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useGetTestsMutation } from "../store/api/auth";
 
 const Root: React.FC<React.PropsWithChildren<{}>> = (props) => {
+  const [getTests, { isLoading }] = useGetTestsMutation();
+
   return (
     <div>
       <h1>Ваш эффективный курс чешского языка Slang. 2023</h1>
