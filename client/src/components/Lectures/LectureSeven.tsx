@@ -3,7 +3,7 @@ import { Collapse } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import useKeyOpen from "../../hooks/useKeyOpen";
 
-const Lecture_7: React.FC<React.PropsWithChildren<{}>> = (props) => {
+const LectureSeven: React.FC<React.PropsWithChildren<{}>> = (props) => {
   const keys = useKeyOpen(14);
 
   return (
@@ -1226,4 +1226,4 @@ const Lecture_7: React.FC<React.PropsWithChildren<{}>> = (props) => {
   );
 };
 
-export default Lecture_7;
+export default LectureSeven;
