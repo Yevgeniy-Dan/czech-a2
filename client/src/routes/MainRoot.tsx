@@ -9,6 +9,13 @@ const Root: React.FC<React.PropsWithChildren<{}>> = (props) => {
     <div>
       <h1>Ваш эффективный курс чешского языка Slang. 2023</h1>
 
+      {/* <button
+        onClick={() => {
+          getTests(12);
+        }}
+      >
+        Get
+      </button> */}
       <div>
         <div>
           {/* <img
