@@ -4,6 +4,11 @@ type LectureBoxType = {
   desc: string;
 };
 
+type MatchType = {
+  id: number;
+  name: string;
+};
+
 export const lectures: LectureBoxType[] = [
   {
     id: 1,
@@ -130,4 +135,14 @@ export const lectures: LectureBoxType[] = [
     title: "Bonus",
     desc: "Těžké vzory",
   },
+];
+
+export const matchLectureNames: MatchType[] = [
+  { id: 1, name: "One" },
+  { id: 2, name: "Two" },
+  { id: 3, name: "Three" },
+  { id: 4, name: "Four" },
+  { id: 5, name: "Five" },
+  { id: 6, name: "Six" },
+  { id: 7, name: "Seven" },
 ];
