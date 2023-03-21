@@ -1,10 +1,10 @@
-import Lecture_1 from "components/Lectures/Lecture_1";
-import Lecture_2 from "components/Lectures/Lecture_2";
-import Lecture_3 from "components/Lectures/Lecture_3";
-import Lecture_4 from "components/Lectures/Lecture_4";
-import Lecture_5 from "components/Lectures/Lecture_5";
-import Lecture_6 from "components/Lectures/Lecture_6";
-import Lecture_7 from "components/Lectures/Lecture_7";
+import Lecture_1 from "../components/Lectures/Lecture_1";
+import Lecture_2 from "../components/Lectures/Lecture_2";
+import Lecture_3 from "../components/Lectures/Lecture_3";
+import Lecture_4 from "../components/Lectures/Lecture_4";
+import Lecture_5 from "../components/Lectures/Lecture_5";
+import Lecture_6 from "../components/Lectures/Lecture_6";
+import Lecture_7 from "../components/Lectures/Lecture_7";
 import ErrorPage from "ErrorPage";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
