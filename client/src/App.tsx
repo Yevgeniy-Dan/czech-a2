@@ -49,9 +49,7 @@ const App: React.FC<React.PropsWithChildren<{}>> = (props) => {
       </div>
     );
 
-  const PrivateRoute = lazy(
-    () => import(`${__dirname}/components/Layout/PrivateRoute`)
-  );
+  const PrivateRoute = lazy(() => import(`./components/Layout/PrivateRoute`));
 
   return (
     <BrowserRouter>
