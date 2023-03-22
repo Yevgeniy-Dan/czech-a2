@@ -13,7 +13,7 @@ const LectureSeven: React.FC<React.PropsWithChildren<{}>> = (props) => {
         <h1 className="text-center">7. lekce</h1>
         <p> Stupňování přídavných jmen a příslovcí </p>
         <Link to="/admin/lectures/6">Предыдущий урок</Link>
-        {/* <Link to="/admin/lectures/8">Следующий урок</Link> */}
+        <Link to="/admin/lectures/8">Следующий урок</Link>
       </div>
       <div>
         <h2>Добрый день, дорогие друзья!</h2>
@@ -1084,7 +1084,9 @@ const LectureSeven: React.FC<React.PropsWithChildren<{}>> = (props) => {
               <p className="fw-bold">
                 14. Poslechněte si českou písničku a doplňte vynechaná slova.
               </p>
-              <a href="https://youtu.be/5TxkeXwAb4Y">Jaroslav Hutka — Náměšť</a>
+              <a href="https://youtu.be/5TxkeXwAb4Y" target="blank">
+                Jaroslav Hutka — Náměšť
+              </a>
 
               <p>
                 Krásný je vzduch <br />… je moře <br />
@@ -1120,7 +1122,7 @@ const LectureSeven: React.FC<React.PropsWithChildren<{}>> = (props) => {
                 vynechaná slova.{" "}
               </p>
 
-              <a href="https://youtu.be/WB4UFpaGde8">
+              <a href="https://youtu.be/WB4UFpaGde8" target="blank">
                 TOP 10 NEJKRÁSNĚJŠÍ VODOPÁDY NA SVĚTĚ
               </a>
 
@@ -1206,13 +1208,22 @@ const LectureSeven: React.FC<React.PropsWithChildren<{}>> = (props) => {
             gramatiky s automatickou kontrolou:
           </p>
 
-          <a href="https://www.umimecesky.cz/vpisovacka-stupnovani-pridavnych-jmen-1-uroven/641">
+          <a
+            href="https://www.umimecesky.cz/vpisovacka-stupnovani-pridavnych-jmen-1-uroven/641"
+            target="blank"
+          >
             A) Stupňování přídavných jmen (lehké)
           </a>
-          <a href="https://www.umimecesky.cz/vpisovacka-stupnovani-pridavnych-jmen/880">
+          <a
+            href="https://www.umimecesky.cz/vpisovacka-stupnovani-pridavnych-jmen/880"
+            target="blank"
+          >
             B) Stupňování přídavných jmen (střední)
           </a>
-          <a href="https://www.umimecesky.cz/vpisovacka-stupnovani-prislovci-2-uroven/593">
+          <a
+            href="https://www.umimecesky.cz/vpisovacka-stupnovani-prislovci-2-uroven/593"
+            target="blank"
+          >
             C) Stupňování příslovcí (střední)
           </a>
         </div>
