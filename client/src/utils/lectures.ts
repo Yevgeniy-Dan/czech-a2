@@ -147,4 +147,6 @@ export const matchLectureNames: MatchType[] = [
   { id: 7, name: "Seven" },
   { id: 8, name: "Eight" },
   { id: 9, name: "Nine" },
+  { id: 10, name: "Ten" },
+  { id: 11, name: "Eleven" },
 ];
