@@ -19,6 +19,9 @@ const App: React.FC<React.PropsWithChildren<{}>> = (props) => {
   const { isAuth } = useAppSelector((state) => state.auth);
 
   const [checkAuth, { isLoading }] = useCheckAuthMutation();
+  //container for attantion!
+  //dialogs bold authors
+  //links to cards in quizlet
 
   useEffect(() => {
     const checkAsyncAuth = async () => {
