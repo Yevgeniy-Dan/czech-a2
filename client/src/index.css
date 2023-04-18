@@ -32,3 +32,8 @@ ul.nested li {
 ul.nested li ul li {
   font-weight: normal;
 }
+
+.red_span {
+  background-color: #f2f2f2;
+  color: #c7254e;
+}
